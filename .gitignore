@@ -3,3 +3,4 @@
 *.cache
 /obj
 /.idea
+/AdventOfCode2019/obj
