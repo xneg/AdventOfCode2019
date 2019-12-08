@@ -1,3 +1,4 @@
+module Day02
 
 let setUpWords noun verb array =
     let tail = array |> Array.skip 3

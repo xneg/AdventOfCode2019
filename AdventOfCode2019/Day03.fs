@@ -1,3 +1,5 @@
+module Day03
+
 type dir = Left | Right | Up | Down
 type Coord = {X: int; Y: int}
 let Zero = {X = 0; Y = 0}
@@ -16,15 +18,6 @@ let parse (step: string) =
     (dir, length)
 
 let generateMove dir length pos =
-    let lengthList = seq {for i = length downto 1 do yield i} |> Seq.toList
-    match dir with
-    | dir.Left -> lengthList |> List.map(fun i -> {X = pos.X - i; Y = pos.Y})
-    | dir.Right -> lengthList |> List.map(fun i -> {X = pos.X + i; Y = pos.Y})
-    | dir.Up -> lengthList |> List.map(fun i -> {X = pos.X; Y = pos.Y - i})
-    | dir.Down -> lengthList |> List.map(fun i -> {X = pos.X; Y = pos.Y + i})
-
-
-let generateMove2 dir length pos =
     let lengthList = seq {for i = length downto 1 do yield i} |> Seq.toList
     match dir with
     | dir.Left -> lengthList |> List.map(fun i -> {X = pos.X - i; Y = pos.Y})
@@ -79,6 +72,4 @@ let secondProblemAnswer =
     |> List.map (fun x -> fst x + snd x)
     |> List.sort
     |> List.skip 1 |> List.take 1
-    
-//9238
 
